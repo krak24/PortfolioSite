@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-driven Project with Utility AI and Behavior Trees - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AI-driven Project with Utility AI and Behavior Trees</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>As part of my university coursework, I developed multiple AI-driven projects where AI programming played a key role. This particular project integrates two AI systems—Utility AI and Behavior Trees—within a single environment. A wolf, controlled by Utility AI, manages its needs (hunger, thirst, and sleep), while a cat follows a Behavior Tree system. The primary goal was to create a well-structured and readable Blueprint-based AI system.</p>
+    </section>
+    
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/UT1.png" alt="Utility AI - UT1" class="zoomable">
+        <img src="images/UT2.png" alt="Utility AI - UT2" class="zoomable">
+        <img src="images/UT3.png" alt="Utility AI - UT3" class="zoomable">
+      </div>
+    </section>
+    
+    <section id="videos">
+      <h2>Videos</h2>
+      <div class="video-row">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/VOeAB1MNxc8" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/lbyxgTJiegk" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

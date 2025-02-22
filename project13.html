@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endless Wave Tower Defense - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Endless Wave Tower Defense</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This game was developed during a weekend Game Jam. It is a tower defense game featuring a scalable wave system, ensuring progressively increasing difficulty as the game continues. The game includes multiple tower types, each with distinct attack mechanics, providing strategic variety in how players defend against incoming enemies. The enemies themselves vary in attributes such as health, armor, and speed, requiring different strategies to counter them effectively.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/TD1.png" alt="Endless Wave Tower Defense - TD1" class="zoomable">
+      </div>
+    </section>
+    
+    <!-- Links -->
+    <section id="links">
+      <h2>Links</h2>
+      <p>Play the game on <a href="https://tojak.itch.io/obronawiey" target="_blank">Itch.io</a>.</p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

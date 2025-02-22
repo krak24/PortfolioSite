@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sekiro-inspired Combat System - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sekiro-inspired Combat System</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>In this project, I recreated the core combat mechanics from Sekiro: Shadows Die Twice, including precise parrying and stance mechanics. I focused on replicating FromSoftware’s design principles, such as hyper armor (stance increase) at specific animation frames and movement queueing for responsive combat interactions. Additionally, I implemented animations and developed the system based on a diagram I created. The diagram, visible in the first image, consists of two parts: the left side illustrates the character’s animations and states (jumping, sprinting, walking, etc.) and their transitions; the right side presents a simplified behavior tree, which I am implementing in this project.</p>
+    </section>
+    
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/sekiro1.png" alt="Sekiro Combat - sekiro1" class="zoomable">
+        <img src="images/sekiro2.png" alt="Sekiro Combat - sekiro2" class="zoomable">
+        <img src="images/sekiro3.png" alt="Sekiro Combat - sekiro3" class="zoomable">
+      </div>
+    </section>
+    
+    <section id="videos">
+      <h2>Videos</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/MmZpP6bgdN4" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

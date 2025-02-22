@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong w wersji Hazard</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            display: block;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 2px solid #fff;
+        }
+        svg:hover {
+            opacity: 1;
+            line: blue;
+        }
+        /* Przyciski w górnej nawigacji */
+        #top-buttons {
+            position: relative;
+            z-index: 10;
+            padding: 10px;
+            background-color: #222;
+        }
+        button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Sekcja z przyciskami obstawiania */
+        #controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 10px;
+            z-index: 5;
+        }
+
+        /* Overlay zwycięzcy (modal) */
+        #winnerOverlay {
+            display: none; /* Domyślnie ukryty */
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999; 
+            color: #fff;
+            text-align: center;
+        }
+        #winnerOverlayContent {
+            position: absolute;
+            top: 30%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #333;
+            padding: 20px;
+            border: 2px solid #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Górne przyciski nawigacji -->
+    <div id="top-buttons">
+        <button onclick="przelaczStrony()">Pong Hazard</button>
+        <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
+        <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
+    </div>
+
+    <!-- Główne Canvas -->
+    <canvas id="pongCanvas" width="700" height="600"></canvas>
+
+    <!-- Przyciski do obstawiania -->
+    <div id="controls">
+        <button onclick="showPlayerControls('left')">Lewy Gracz</button>
+        <button onclick="showPlayerControls('right')">Prawy Gracz</button>
+    </div>
+
+    <!-- Overlay z informacją o zwycięzcy -->
+    <div id="winnerOverlay">
+        <div id="winnerOverlayContent">
+            <h1 id="winnerMessage"></h1>
+            <!-- Zachowujemy te same przyciski nawigacji, by móc przejść dalej -->
+            <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
+            <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
+            <button onclick="przelaczStrony()">Pong Hazard</button>
+        </div>
+    </div>
+
+    <script>
+        // Funkcje nawigacji
+        function przelaczStrony() {
+            // Pong w wersji hazard
+            window.location.href = 'PongHazard.html';
+        }
+        function przejdzDoPonga() {
+            // Pong klasyczny
+            window.location.href = 'Pong.html';
+        }
+        function powrotDoPortfolio() {
+            // Powrót do index.html
+            window.location.href = 'index.html';
+        }
+
+        // Funkcja do obstawiania
+        function showPlayerControls(playerSide) {
+
+            document.getElementById('controls').style.display = 'none';
+            // Możesz tu dodać logikę zapamiętania wyboru:
+            console.log("Obstawiono wygraną:", playerSide);
+            // Ewentualnie można wyświetlać inne elementy, np.:
+            // if (playerSide === 'left') { ... }
+        }
+    </script>
+
+    <script>
+    var NUMS = [
+        "1 101 111",
+        "0 001 001",
+        "1 011 110",
+        "1 011 011",
+        "0 111 001",
+        "1 110 011",
+        "1 110 111",
+        "1 001 001",
+        "1 111 111",
+        "1 111 011"
+    ],
+    POINTS = [
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+        [0, 1, 1, 1],
+        [1, 0, 1, 1],
+        [0, 1, 0, 2],
+        [0, 2, 1, 2],
+        [1, 1, 1, 2]
+    ];
+
+    for (var i = 0; i < NUMS.length; i++) {
+        var n = NUMS[i].replace(/\s+/g, "");
+        NUMS[i] = (function() {
+            var l = [];
+            for (var j = 0; j < n.length; j++) {
+                l.push(n[j] === "1");
+            }
+            return l;
+        })();
+    }
+
+    function pad(str, padding, width) {
+        return (new Array(width || 2).join(padding || 0) + str).slice(-width);
+    }
+
+    function drawNumber(n, x, y, ralign) {
+        n = n.toString();
+        var size = 32, padding = 16;
+
+        ctx.save();
+        ctx.strokeStyle = "#fff";
+        ctx.lineCap = "square";
+        ctx.lineWidth = padding / 2;
+        if (ralign) {
+            x -= (n.length * (padding + size) - padding);
+        }
+        ctx.translate(x, y);
+        for (var i = 0; i < n.length; i++) {
+            var num = NUMS[parseInt(n[i])];
+
+            ctx.beginPath();
+            for (var j = 0; j < num.length; j++) {
+                if (num[j]) {
+                    var p = POINTS[j];
+                    ctx.moveTo(p[0] * size, p[1] * size);
+                    ctx.lineTo(p[2] * size, p[3] * size);
+                }
+            }
+            ctx.closePath();
+            ctx.stroke();
+            var p2 = padding / 2, p4 = padding / 4;
+            ctx.fillRect(size - p4, 2 * size - p4, p2, p2);
+            ctx.translate(size + padding, 0);
+        }
+        ctx.restore();
+    }
+
+    var WIDTH = 700,
+        HEIGHT = 600,
+        pi = Math.PI,
+        // Klawisze
+        UpArrow = 38,
+        DownArrow = 40,
+        W = 87,
+        S = 83,
+        R = 82,
+        canvas, ctx, keystate,
+
+        // Zmniejszamy prędkość o 30% (z ~0.1 -> 0.07)
+        player = {
+            x: null,
+            y: null,
+            score: null,
+            width: 30,
+            height: 90,
+            update: function () {
+                // W hazardzie była logika "półautomatyczna" – też zmniejszamy
+                var desty = ball.y - (this.height - ball.side) * 0.5;
+                this.y += (desty - this.y) * 0.07;
+                this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
+            },
+            draw: function () {
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+        },
+        ai = {
+            x: null,
+            y: null,
+            score: null,
+            width: 30,
+            height: 90,
+            update: function () {
+                var desty = ball.y - (this.height - ball.side) * 0.5;
+                this.y += (desty - this.y) * 0.07;
+                this.y = Math.max(Math.min(this.y, HEIGHT - this.height), 0);
+            },
+            draw: function () {
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+        },
+        // Zmniejszona prędkość piłki z 12 na 8.4
+        ball = {
+            x: null,
+            y: null,
+            vel: null,
+            side: 20,
+            speed: 8.4,
+            serve: function (side) {
+                var r = Math.random();
+                this.x = side === 1 ? player.x + player.width : ai.x - this.side;
+                this.y = (HEIGHT - this.side) * r;
+                var phi = 0.1 * pi * (1 - 2 * r);
+                this.vel = {
+                    x: side * this.speed * Math.cos(phi),
+                    y: this.speed * Math.sin(phi)
+                }
+            },
+            update: function () {
+                this.x += this.vel.x;
+                this.y += this.vel.y;
+                if (0 > this.y || this.y + this.side > HEIGHT) {
+                    var offset = this.vel.y < 0 ? 0 - this.y : HEIGHT - (this.y + this.side);
+                    this.y += 2 * offset;
+                    this.vel.y *= -1;
+                }
+                var AABBIntersect = function (ax, ay, aw, ah, bx, by, bw, bh) {
+                    return ax < bx + bw && ay < by + bh && bx < ax + aw && by < ay + ah;
+                };
+                var pdle = this.vel.x < 0 ? player : ai;
+                // Odbicie od paletki
+                if (AABBIntersect(
+                    pdle.x, pdle.y, pdle.width, pdle.height,
+                    this.x, this.y, this.side, this.side
+                )) {
+                    this.x = (pdle === player) 
+                        ? player.x + player.width 
+                        : ai.x - this.side;
+                    var n = (this.y + this.side - pdle.y) / (pdle.height + this.side);
+                    var phi = 0.25 * pi * (2 * n - 1);
+                    var smash = Math.abs(phi) > 0.2 * pi ? 1.5 : 1;
+                    this.vel.x = smash * (pdle === player ? 1 : -1) 
+                                 * this.speed * Math.cos(phi);
+                    this.vel.y = smash * this.speed * Math.sin(phi);
+                }
+
+                // Wyjście poza ekran - punkt
+                if (0 > this.x + this.side || this.x > WIDTH) {
+                    var isplayer = (pdle === player);
+                    this.serve(isplayer ? 1 : -1);
+                    player.score += isplayer ? 0 : 1;
+                    ai.score += isplayer ? 1 : 0;
+                }
+            },
+            draw: function () {
+                ctx.fillRect(this.x, this.y, this.side, this.side);
+            }
+        };
+
+    function requestFullscreen() {
+        if (canvas.requestFullscreen) {
+            canvas.requestFullscreen();
+        } else if (canvas.msRequestFullscreen) {
+            canvas.msRequestFullscreen();
+        } else if (canvas.mozRequestFullScreen) {
+            canvas.mozRequestFullScreen();
+        } else if (canvas.webkitRequestFullscreen) {
+            canvas.webkitRequestFullscreen();
+        }
+        window.onresize = function () {
+            canvas.width = WIDTH = window.innerWidth;
+            canvas.height = HEIGHT = window.innerHeight;
+            init();
+        }
+    }
+
+    // Zmienna, żeby zatrzymać grę po wygranej
+    var gameOver = false;
+
+    function main() {
+        canvas = document.getElementById("pongCanvas");
+        ctx = canvas.getContext("2d");
+
+        keystate = {};
+
+        document.addEventListener("keydown", function (evt) {
+            keystate[evt.keyCode] = true;
+            // R - restart rozgrywki
+            if (evt.keyCode === R && !gameOver) {
+                player.score = 0;
+                ai.score = 0;
+                ball.serve(player.score > ai.score ? 1 : -1);
+            }
+        });
+        document.addEventListener("keyup", function (evt) {
+            delete keystate[evt.keyCode];
+        });
+
+        init();
+
+        function touchevt(evt) {
+            var el = evt.target, oy = 0;
+            do {
+                oy += el.offsetTop;
+            } while (el = el.parentOffset);
+            
+            // Ewentualne sterowanie dotykiem
+            player.y = evt.touches[0].clientY - oy - player.height / 2;
+        }
+        canvas.addEventListener("touchmove", touchevt);
+        canvas.addEventListener("touchstart", touchevt);
+
+        // Ikona do włączania fullscreen (opcjonalna)
+        var d = document.createElement("div");
+        d.innerHTML = '<svg onclick="requestFullscreen()" width="20" height="16" opacity="0.5">' +
+                      '<path d="M0 5v-5h5m10 0h5v5m0 6v5h-5m-10 0h-5v-5M6 6h8v4h-8z" ' +
+                      'style="fill:none;stroke:#000;stroke-width:4"></path></svg>';
+        // document.body.appendChild(d); // Jeśli chcesz dodać ikonkę do DOM
+
+        // Główna pętla gry
+        var loop = function () {
+            if (!gameOver) {
+                update();
+                draw();
+            }
+            window.requestAnimationFrame(loop, canvas);
+        };
+        window.requestAnimationFrame(loop, canvas);
+    }
+
+    function init() {
+        player.x = player.width;
+        player.y = (HEIGHT - player.height) / 2;
+        player.score = 0;
+
+        ai.x = WIDTH - (player.width + ai.width);
+        ai.y = (HEIGHT - ai.height) / 2;
+        ai.score = 0;
+
+        gameOver = false; // reset flagi
+
+        ball.serve(1);
+    }
+
+    // Funkcja wywoływana, gdy ktoś osiągnie 10 punktów
+    function displayWinner() {
+        gameOver = true; // Zatrzymujemy aktualizację i rysowanie
+
+        var winner = (player.score >= 10) ? "Lewy gracz" : "Prawy gracz";
+        var message = winner + " wygrał!";
+
+        // Wyświetlamy w overlay
+        document.getElementById("winnerMessage").innerHTML = message;
+        document.getElementById("winnerOverlay").style.display = 'block';
+    }
+
+    function update() {
+        ball.update();
+        player.update();
+        ai.update();
+
+        // Warunek końca gry (np. do 10 punktów)
+        if (player.score >= 10 || ai.score >= 10) {
+            displayWinner();
+        }
+    }
+
+    function draw() {
+        // Tło
+        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+        ctx.save();
+        ctx.fillStyle = "#fff";
+
+        // Piłka, gracze
+        ball.draw();
+        player.draw();
+        ai.draw();
+
+        // Środkowa przerywana linia
+        var w = 4;
+        var x = (WIDTH - w) * 0.5;
+        var y = 0;
+        var step = HEIGHT / 20;
+        while (y < HEIGHT) {
+            ctx.fillRect(x, y + step * 0.25, w, step * 0.5);
+            y += step;
+        }
+
+        // Wynik
+        var w2 = WIDTH / 2;
+        drawNumber(pad(player.score), w2 - 15, 15, true);
+        drawNumber(pad(ai.score), w2 + 15, 15);
+
+        ctx.restore();
+    }
+
+    main();
+  </script>
+
+  <div style="margin-top: 0px;">
+    Obstaw, która paletka wygra – prawa czy lewa? Gra trwa do 10 punktów.
+  </div>
+</body>
+</html>

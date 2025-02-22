@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tank with AI and Turret in Unreal Engine - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tank with AI and Turret in Unreal Engine</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This project was developed as part of a university assignment and focuses on tank control, AI behavior, and turret mechanics in Unreal Engine. The tank is fully controlled via C++ scripts, handling movement and interactions. Additionally, the turret system was also implemented in C++, allowing it to autonomously detect and shoot at enemies, specifically targeting the player’s tank. The simple enemy AI was designed using Behavior Trees (BT). In this implementation, the enemy approaches the player, deploys a turret, and then moves away to restock turrets before returning to engage again.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/tanks1.png" alt="Tank with AI and Turret - Tanks 1" class="zoomable">
+        <img src="images/tanks2.png" alt="Tank with AI and Turret - Tanks 2" class="zoomable">
+        <img src="images/tanks3.png" alt="Tank with AI and Turret - Tanks 3" class="zoomable">
+        <img src="images/tanks4.png" alt="Tank with AI and Turret - Tanks 4" class="zoomable">
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

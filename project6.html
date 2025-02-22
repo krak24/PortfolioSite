@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Arena Fighter - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>2D Arena Fighter</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>In this project, I developed the main character, implementing animations provided by the artist and designing a fluid combo system. I also created a scoring system that rewards players for defeating enemies and a combo rating system ranging from C (lowest) to S (highest), encouraging skillful play.</p>
+      <p>The game was designed around the Game Jam's theme: "Health has to be sacrificed." To align with this, we introduced a unique mechanic centered around a special object: the Rose. The protagonist wields a thorned rose as a weapon, suffering self-inflicted damage with each attack. However, successfully hitting an enemy restores lost health, creating a dynamic risk-reward system that challenges players to balance aggression and survival.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/rose1.png" alt="2D Arena Fighter - Rose 1" class="zoomable">
+        <img src="images/rose2.png" alt="2D Arena Fighter - Rose 2" class="zoomable">
+      </div>
+    </section>
+    
+    <!-- Links -->
+    <section id="links">
+      <h2>Links</h2>
+      <p>
+        <strong>Itch.io game page:</strong> 
+        <a href="https://tojak.itch.io/bloody-buds" target="_blank">tojak.itch.io/bloody-buds</a>
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

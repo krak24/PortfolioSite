@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance AI System in Unreal - In Development - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Advance AI System in Unreal (In Development)</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This project will present an advanced AI system, built on a Behavior Tree structure enhanced with Utility AI for dynamic decision-making. The system will manage combat through a Utility Combat Manager, analyze the environment using the Environment Query System (EQS), and utilize an advanced navigation system inspired by Death Stranding. The Behavior Tree structure is modeled after the AI design in Just Cause 3, enabling NPCs to react adaptively to changing game conditions. The entire system is being implemented in Unreal Engine, leveraging Blueprints and C++. The navigation system is designed for dynamic path recalculations, ensuring that NavMesh is built only around AI agents and the player, optimizing performance. Additionally, it incorporates a hierarchical path system (Highway System), allowing AI to navigate using predefined high-level paths when traditional NavMesh navigation fails. This approach enhances AI movement, especially in complex and open environments. This is an ongoing project that is currently in development.</p>
+    </section>
+    
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/BT1.png" alt="Advanced NPC AI - BT1" class="zoomable">
+        <img src="images/BT2.png" alt="Advanced NPC AI - BT2" class="zoomable">
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

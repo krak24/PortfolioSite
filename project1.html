@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glass Thoughts - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Glass Thoughts</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This is my most extensive project to date, developed over six months as part of a game jam. I took on the roles of both programmer and game designer while also leading a team of three artists, a sound designer, and a writer. My responsibilities included designing and implementing minigames, developing a custom command-based engine in Unity for the visual novel – drawing inspiration from Ren’Py. This project also serves as the foundation for my engineering thesis. Once the approval process is completed by the university, I will provide a link to the final version in the Link section below. The development process was an intense grind, requiring a significant amount of work and learning. From a technical perspective, I gained valuable experience in text architecture, object-oriented programming, and data-driven design. Over the course of six months, I wrote more than 600,000 characters of code in Visual Studio, making it one of the most time-consuming and complex projects I have worked on.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/GT1.png" alt="Glass Thoughts - GT1" class="zoomable">
+        <img src="images/GT2.png" alt="Glass Thoughts - GT2" class="zoomable">
+        <img src="images/GT3.png" alt="Glass Thoughts - GT3" class="zoomable">
+        <img src="images/GT4.png" alt="Glass Thoughts - GT4" class="zoomable">
+        <img src="images/GT5.png" alt="Glass Thoughts - GT5" class="zoomable">
+        <img src="images/GT6.png" alt="Glass Thoughts - GT6" class="zoomable">
+      </div>
+    </section>
+    
+    <!-- Links: moved above the video -->
+    <section id="links">
+      <h2>Links</h2>
+      <p>
+        <strong>Itch.io game page:</strong> 
+        <a href="https://tojak.itch.io/glass-thoughts" target="_blank">tojak.itch.io/glass-thoughts</a>
+      </p>
+      <p>
+        <strong>Featured code on GitHub:</strong> 
+        <a href="https://github.com/krak24/FeaturedScriptsForPortfolio/tree/main/GlassThoughts" target="_blank">github.com/krak24/GlassThoughts</a>
+      </p>
+      <p>
+        <strong>Engineering thesis link:</strong> 
+        <span>To be added in the future</span>
+      </p>
+    </section>
+    
+    
+    <!-- Video -->
+    <section id="video">
+      <h2>Video</h2>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/OLkUeRrtoko" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

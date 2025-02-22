@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top-Down 2D Puzzle Game with Simple Story - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top-Down 2D Puzzle Game with Simple Story</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This game was created as a university assignment during the first semester of game development studies. It is a top-down 2D puzzle game that includes a simple story-driven cutscene, reminiscent of classic RPG Maker-style games. The core gameplay revolves around environmental logic puzzles that involve moving platforms. Each platform follows a distinct movement pattern based on its color, creating complex interactions and requiring players to plan their movements carefully. By combining different platform behaviors, the game allows for advanced puzzle design, challenging players to adapt to dynamic environments.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/ptoki1.png" alt="Top-Down 2D Puzzle Game - Ptoki 1" class="zoomable">
+        <img src="images/ptoki2.png" alt="Top-Down 2D Puzzle Game - Ptoki 2" class="zoomable">
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game for Bit Jam Wrocław - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Game for Bit Jam Wrocław</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section>
+      <h2>Project Description</h2>
+      <p>This game was created during Bit Jam Wrocław in a 24-hour time frame. It features a vertical platforming mechanic where the player must jump higher and higher using a tail bounce mechanic, inspired by Pogostick. The movement system requires precise timing and control to progress through the level. The player is constantly chased by fire. Scattered throughout the level are water droplets, which can be collected to slow down the advancing flames. If the fire catches up to the player, the game is lost. Inspired by Icy Tower and Jump King.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/dragon1.png" alt="Game for Bit Jam Wrocław - Dragon 1" class="zoomable">
+        <img src="images/dragon2.png" alt="Game for Bit Jam Wrocław - Dragon 2" class="zoomable">
+      </div>
+    </section>
+    
+    <!-- Links -->
+    <section>
+      <h2>Links</h2>
+      <p>
+        <strong>Itch.io game page:</strong> 
+        <a href="https://tojak.itch.io/dragon-gum" target="_blank">tojak.itch.io/dragon-gum</a>
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

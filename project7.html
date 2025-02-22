@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finite State Machine AI Archer Prototype - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Finite State Machine AI Archer Prototype</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>The project is a third-person archery combat prototype developed in Unity. The player character is animated using Mixamo animations and features a bow shooting mechanic with damage calculation and health management.</p>
+      <p>The enemy AI is implemented using a finite state machine (FSM) with three states: patrol, wait, and attack. Enemy movement is handled through Unity’s NavMesh system, allowing for navigation across the environment. In the patrol state, enemies follow predefined routes. In the wait state, they remain idle until detecting the player. In the attack state, they engage the player in combat.</p>
+      <p>All core mechanics, including animation integration, AI behavior, and navigation, were developed within Unity.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/archer4.png" alt="FSM AI Archer Prototype - Archer 4" class="zoomable">
+        <img src="images/archer2.png" alt="FSM AI Archer Prototype - Archer 2" class="zoomable">
+        <img src="images/archer3.png" alt="FSM AI Archer Prototype - Archer 3" class="zoomable">
+        <img src="images/archer5.png" alt="FSM AI Archer Prototype - Archer 5" class="zoomable">
+      </div>
+    </section>
+    
+    <!-- Links -->
+    <section id="links">
+      <h2>Links</h2>
+      <p>No additional links available.</p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

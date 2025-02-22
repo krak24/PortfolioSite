@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perlin Noise-based World Generator - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Perlin Noise-based World Generator</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This project is a procedural world generator built in Unity, initially based on a tutorial and later expanded into a custom island generation system. The terrain is generated using Perlin Noise-based heightmaps, with topographical coloring to visually differentiate elevation levels. To optimize performance, the project includes a Level of Detail (LOD) system and a chunk-based NavMesh generation system. The navigation mesh dynamically adapts based on chunk LOD levels, using appropriate markers to optimize AI pathfinding and reduce unnecessary calculations. Additional gameplay elements were implemented, including basic AI with team-based enemy behavior, as well as enemy spawners (radio stations) that act as objectives for the player to destroy. These spawners are placed randomly on the generated map.</p>
+    </section>
+    
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/navigation1.png" alt="Perlin Noise-based World Generator - Navigation 1" class="zoomable">
+        <img src="images/navigation2.png" alt="Perlin Noise-based World Generator - Navigation 2" class="zoomable">
+        <img src="images/navigation3.png" alt="Perlin Noise-based World Generator - Navigation 3" class="zoomable">
+        <img src="images/navigation4.png" alt="Perlin Noise-based World Generator - Navigation 4" class="zoomable">
+        <img src="images/procgen1.png" alt="Perlin Noise-based World Generator - Procgen 1" class="zoomable">
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+  
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+  
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+      
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+      
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
