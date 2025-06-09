@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live2D Visual Novel with Cooking Minigame - Tomasz Maligranda Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Live2D Visual Novel with Cooking Minigame</h1>
+    <nav>
+      <a href="index.html">Back to Portfolio</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Project Description -->
+    <section id="description">
+      <h2>Project Description</h2>
+      <p>This visual novel is being developed during a Game Jam and is currently in progress. The project is powered by my custom command-based dialogue engine built in Unity, originally developed for the Glass Thoughts project. For this new title, the engine was significantly expanded to support additional features such as voice acting playback and full Live2D character support via Cubism SDK integration.</p>
+      <p>In addition to the story-driven narrative, the game features a cooking minigame that complements the overall plot and pacing. Once development is complete and the game is uploaded, I will include the relevant download links below.</p>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="images/VNE1.png" alt="Live2D Visual Novel - Screenshot" class="zoomable">
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section id="links">
+      <h2>Links</h2>
+      <p><strong>Itch.io game page:</strong> <span>Coming soon</span></p>
+      <p><strong>GitHub (featured code):</strong> <span>Coming soon</span></p>
+    </section>
+
+    <!-- Optional Video (can be added later) -->
+    <!--
+    <section id="video">
+      <h2>Video</h2>
+      <div class="video-container">
+        <iframe src="YOUR_VIDEO_LINK_HERE" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+    -->
+  </main>
+
+  <footer>
+    <p>© 2025 Tomasz Maligranda</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    // Lightbox functionality for gallery images
+    document.addEventListener('DOMContentLoaded', function () {
+      var modal = document.getElementById('image-modal');
+      var modalImg = document.getElementById('modal-img');
+      var closeBtn = document.querySelector('#image-modal .close');
+
+      document.querySelectorAll('.zoomable').forEach(function(img) {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
