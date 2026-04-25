@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pong Klasyczny</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Pong - Tomasz Maligranda</title>
+    <meta name="description" content="Classic browser Pong implementation with keyboard controls and score-to-win gameplay.">
+    <meta property="og:title" content="Classic Pong - Tomasz Maligranda">
+    <meta property="og:description" content="A classic browser Pong game included in the portfolio projects.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://krak24.github.io/PortfolioSite/Pong.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
     <style>
         body {
             background-color: #111;
@@ -69,8 +76,8 @@
     <!-- Górne przyciski nawigacji -->
     <div id="top-buttons">
         <button onclick="przelaczStrony()">Pong Hazard</button>
-        <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
-        <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
+        <button onclick="przejdzDoPonga()">Classic Pong</button>
+        <button onclick="powrotDoPortfolio()">Back to Portfolio</button>
     </div>
 
     <!-- Canvas -->
@@ -81,9 +88,9 @@
         <div id="winnerOverlayContent">
             <h1 id="winnerMessage"></h1>
             <!-- Te same przyciski nawigacji, aby gracz mógł dalej przechodzić -->
-            <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
+            <button onclick="powrotDoPortfolio()">Back to Portfolio</button>
             <button onclick="przelaczStrony()">Pong Hazard</button>
-            <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
+            <button onclick="przejdzDoPonga()">Classic Pong</button>
         </div>
     </div>
 
@@ -335,8 +342,8 @@
     function displayWinner() {
         gameOver = true;
 
-        var winner = (player.score >= 10) ? "Lewy gracz" : "Prawy gracz";
-        var message = winner + " wygrał!";
+        var winner = (player.score >= 10) ? "Left player" : "Right player";
+        var message = winner + " won!";
 
         // Wyświetl komunikat w overlay
         document.getElementById("winnerMessage").innerHTML = message;
@@ -387,7 +394,10 @@
   </script>
 
   <div style="margin-top: 0px;">
-    Sterowanie: W/S - poruszanie lewym graczem, R - restart. Gra trwa do 10 punktów.
+    Controls: W/S move the left paddle, R restarts the match. First to 10 points wins.
+  </div>
+  <div style="margin-top: 8px;">
+    &copy; 2026 Tomasz Maligranda
   </div>
 </body>
 </html>

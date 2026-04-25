@@ -2,7 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pong w wersji Hazard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Hazard Mode - Tomasz Maligranda</title>
+    <meta name="description" content="Hazard-themed Pong variant with side betting selection and classic score-to-win game flow.">
+    <meta property="og:title" content="Pong Hazard Mode - Tomasz Maligranda">
+    <meta property="og:description" content="A hazard variant of Pong included as a browser game project in the portfolio.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://krak24.github.io/PortfolioSite/PongHazard.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
     <style>
         body {
             background-color: #111;
@@ -81,8 +88,8 @@
     <!-- Górne przyciski nawigacji -->
     <div id="top-buttons">
         <button onclick="przelaczStrony()">Pong Hazard</button>
-        <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
-        <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
+        <button onclick="przejdzDoPonga()">Classic Pong</button>
+        <button onclick="powrotDoPortfolio()">Back to Portfolio</button>
     </div>
 
     <!-- Główne Canvas -->
@@ -90,8 +97,8 @@
 
     <!-- Przyciski do obstawiania -->
     <div id="controls">
-        <button onclick="showPlayerControls('left')">Lewy Gracz</button>
-        <button onclick="showPlayerControls('right')">Prawy Gracz</button>
+        <button onclick="showPlayerControls('left')">Bet Left Player</button>
+        <button onclick="showPlayerControls('right')">Bet Right Player</button>
     </div>
 
     <!-- Overlay z informacją o zwycięzcy -->
@@ -99,8 +106,8 @@
         <div id="winnerOverlayContent">
             <h1 id="winnerMessage"></h1>
             <!-- Zachowujemy te same przyciski nawigacji, by móc przejść dalej -->
-            <button onclick="powrotDoPortfolio()">Powrót do Portfolio</button>
-            <button onclick="przejdzDoPonga()">Pong Klasyczny</button>
+            <button onclick="powrotDoPortfolio()">Back to Portfolio</button>
+            <button onclick="przejdzDoPonga()">Classic Pong</button>
             <button onclick="przelaczStrony()">Pong Hazard</button>
         </div>
     </div>
@@ -125,7 +132,7 @@
 
             document.getElementById('controls').style.display = 'none';
             // Możesz tu dodać logikę zapamiętania wyboru:
-            console.log("Obstawiono wygraną:", playerSide);
+            console.log("Bet selected:", playerSide);
             // Ewentualnie można wyświetlać inne elementy, np.:
             // if (playerSide === 'left') { ... }
         }
@@ -391,8 +398,8 @@
     function displayWinner() {
         gameOver = true; // Zatrzymujemy aktualizację i rysowanie
 
-        var winner = (player.score >= 10) ? "Lewy gracz" : "Prawy gracz";
-        var message = winner + " wygrał!";
+        var winner = (player.score >= 10) ? "Left player" : "Right player";
+        var message = winner + " won!";
 
         // Wyświetlamy w overlay
         document.getElementById("winnerMessage").innerHTML = message;
@@ -443,7 +450,10 @@
   </script>
 
   <div style="margin-top: 0px;">
-    Obstaw, która paletka wygra – prawa czy lewa? Gra trwa do 10 punktów.
+    Place a bet on the left or right paddle. First to 10 points wins the match.
+  </div>
+  <div style="margin-top: 8px;">
+    &copy; 2026 Tomasz Maligranda
   </div>
 </body>
 </html>

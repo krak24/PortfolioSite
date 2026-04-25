@@ -3,233 +3,377 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tomasz Maligranda Portfolio</title>
+  <title>Tomasz Maligranda - Game Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Tomasz Maligranda, junior game developer focused on gameplay programming, AI systems, and Unreal/Unity engine production.">
+  <meta property="og:title" content="Tomasz Maligranda - Game Developer Portfolio">
+  <meta property="og:description" content="Junior game developer portfolio featuring Unity, Unreal Engine, AI systems, gameplay programming, and game jam projects.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://krak24.github.io/PortfolioSite/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Tomasz Maligranda Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#in-development">Projects in Development</a></li>
-        <li><a href="#finished-projects">Finished Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-brand">Tomasz Maligranda</h1>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#featured-projects">Featured</a></li>
+          <li><a href="#unreal-engine">Unreal</a></li>
+          <li><a href="#unity">Unity</a></li>
+          <li><a href="#game-jams">Jams</a></li>
+          <li><a href="#other">Other</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  
-  <main>
-    <!-- About Me Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm Tomasz Maligranda, an aspiring junior game developer specializing in AI. My passion lies in designing intelligent and dynamic game systems. I’ve worked on a variety of projects, from 2D top-down puzzle and combat games to visual novels with custom interpretation engine. but over time, my focus has shifted toward AI in games. </p>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/tomasz-maligranda-a68678267/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/krak24" target="_blank">GitHub</a></li>
-        <li><a href="https://tojak.itch.io/" target="_blank">Itch.io</a></li>
-      </ul>
-    </section>
-    
-    <!-- Projects in Development Section (appears on top) -->
-<section id="in-development">
-  <h2>Projects in Development</h2>
-  <div class="projects-container">
 
-    <!-- Project 1: Visual Novel with Cooking Minigame -->
-    <div class="project-card">
-      <a href="project16.html">
-        <img src="images/VNE.png" alt="Live2D Visual Novel with Cooking Minigame">
-        <div class="project-info">
-          <h3>Live2D Visual Novel with Cooking Minigame</h3>
-          <p>A story-driven visual novel developed in Unity, built on a custom command-based dialogue engine inspired by Ren’Py. Includes a cooking minigame and Live2D character animations. (In Development)</p>
+  <main class="site-main">
+    <section class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Game Developer Portfolio</p>
+        <h2>Selected Game Development Projects</h2>
+        <div class="hero__actions">
+          <a class="btn" href="https://www.linkedin.com/in/tomasz-maligranda-a68678267/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/krak24" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://tojak.itch.io/" target="_blank" rel="noopener noreferrer">Itch.io</a>
+          <a class="btn" href="mailto:maligrandatomasz@gmail.com">Email</a>
+          <a class="btn" href="https://howlongtobeat.com/user/Toja/games/completed/1" target="_blank" rel="noopener noreferrer">HowLongToBeat</a>
         </div>
-      </a>
-    </div>
-
-    <!-- Project 2: Advanced Horror AI System in Unreal -->
-    <div class="project-card">
-      <a href="project2.html">
-        <img src="images/BT1.png" alt="Advanced Horror AI System in Unreal">
-        <div class="project-info">
-          <h3>Advanced Horror AI System in Unreal</h3>
-          <p>An advanced enemy AI system built in Unreal Engine using C++ and Behavior Trees. Focused on stealth, tension, and intelligent enemy behavior. (In Development)</p>
-        </div>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-    
-    <!-- Finished Projects Section -->
-    <section id="finished-projects">
-      <h2>Finished Projects</h2>
-      <div class="projects-container">
-        <!-- Project 1: Glass Thoughts -->
-        <div class="project-card">
-          <a href="project1.html">
-            <img src="images/project1.png" alt="Glass Thoughts">
-            <div class="project-info">
-              <h3>Glass Thoughts</h3>
-              <p>The largest project I worked on for 6 months. A custom command engine-based visual novel with mini-games.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 3: Sekiro-inspired Combat System -->
-        <div class="project-card">
-          <a href="project3.html">
-            <img src="images/sekiro2.png" alt="Sekiro-inspired Combat System">
-            <div class="project-info">
-              <h3>Sekiro-inspired Combat System</h3>
-              <p>Recreated core combat mechanics with precise parrying and dynamic stance transitions.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 4: AI-driven Project with Utility AI and Behavior Trees -->
-        <div class="project-card">
-          <a href="project4.html">
-            <img src="images/UT1.png" alt="AI-driven Project">
-            <div class="project-info">
-              <h3>AI-driven Project with Utility AI and Behavior Trees</h3>
-              <p>Integrated Utility AI and Behavior Trees for dynamic NPC behavior.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 5: Bird Flock Simulation -->
-        <div class="project-card">
-          <a href="project5.html">
-            <img src="images/project5.png" alt="Bird Flock Simulation">
-            <div class="project-info">
-              <h3>Bird Flock Simulation</h3>
-              <p>A swarm algorithm for realistic bird flight simulation.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 7: Finite State Machine AI Archer Prototype -->
-        <div class="project-card">
-          <a href="project7.html">
-            <img src="images/archer4.png" alt="Finite State Machine AI Archer Prototype">
-            <div class="project-info">
-              <h3>Finite State Machine AI Archer Prototype</h3>
-              <p>A third-person archery combat prototype with AI-driven enemies and shooting mechanics.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 8: Arkanoid-Style Game -->
-        <div class="project-card">
-          <a href="project8.html">
-            <img src="images/arkanoid2.png" alt="Arkanoid-Style Game">
-            <div class="project-info">
-              <h3>Arkanoid-Style Game</h3>
-              <p>A classic Arkanoid clone with multiple levels, UI, and a score counter.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 9: Game for Bit Jam Wrocław -->
-        <div class="project-card">
-          <a href="project9.html">
-            <img src="images/dragon2.png" alt="Game for Bit Jam Wrocław">
-            <div class="project-info">
-              <h3>Game for Bit Jam Wrocław</h3>
-              <p>A vertical platformer inspired by Jump King, Pogostick and Icy Tower.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 10: Top Down 2D Logic Game -->
-        <div class="project-card">
-          <a href="project10.html">
-            <img src="images/melon2.png" alt="Top Down 2D Logic Game">
-            <div class="project-info">
-              <h3>Top Down 2D Logic Game</h3>
-              <p>A 48-hour puzzle game featuring complex environmental challenges</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 11: Perlin Noise-based World Generator -->
-        <div class="project-card">
-          <a href="project11.html">
-            <img src="images/navigation1.png" alt="Perlin Noise-based World Generator">
-            <div class="project-info">
-              <h3>Perlin Noise-based World Generator</h3>
-              <p>Procedural terrain generation with Perlin Noise, LOD, and dynamic NavMesh.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 12: Tank with AI and Turret in Unreal Engine -->
-        <div class="project-card">
-          <a href="project12.html">
-            <img src="images/tanks1.png" alt="Tank with AI and Turret in Unreal Engine">
-            <div class="project-info">
-              <h3>Tank with AI and Turret in Unreal Engine</h3>
-              <p>A tank controlled via C++ with AI turret mechanics and behavior trees.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 13: Endless Wave Tower Defense -->
-        <div class="project-card">
-          <a href="project13.html">
-            <img src="images/TD1.png" alt="Endless Wave Tower Defense">
-            <div class="project-info">
-              <h3>Endless Wave Tower Defense</h3>
-              <p>A tower defense game with scalable waves and strategic tower variety.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Project 14: Top-Down 2D Puzzle Game with Simple Story -->
-        <div class="project-card">
-          <a href="project14.html">
-            <img src="images/ptoki1.png" alt="Top-Down 2D Puzzle Game with Simple Story">
-            <div class="project-info">
-              <h3>Top-Down 2D Puzzle Game with Simple Story</h3>
-              <p>A university project with environmental puzzles and a simple story cutscene.</p>
-            </div>
-          </a>
-        </div>
-        <!-- Pong Project (Project 15) -->
-        <div class="project-card">
-          <a href="Pong.html">
-            <img src="images/Pong1.png" alt="Pong">
-            <div class="project-info">
-              <h3>Pong</h3>
-              <p>Classic Pong game, and gamble version with bets.</p>
-            </div>
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="project6.html">
-            <img src="images/rose1.png" alt="2D Arena Fighter">
-            <div class="project-info">
-              <h3>2D Arena Fighter</h3>
-              <p>A game made during a weekend Game Jam, featuring waves of enemies for the player to
-                fight..</p>
-            </div>
-          </a>
-        </div>
-        <a class="project-card" href="project17-engineering-thesis.html">
-  <div class="project-card__thumb project-card__thumb--blank" aria-hidden="true"></div>
-
-  <div class="project-card__content">
-    <div class="project-card__meta">17</div>
-    <h3 class="project-card__title">Engineering Thesis - Unity Visual Novel Interpreter</h3>
-    <p class="project-card__desc">
-      Grade: 4.5. Thesis describing the process of creating a game on a custom visual novel interpreter built inside Unity.
-    </p>
-  </div>
-</a>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>If you have any questions, feel free to reach out at: <a href="mailto:maligrandatomasz@gmail.com">maligrandatomasz@gmail.com</a></p>
+    <section id="about" class="section-block">
+      <h2 class="section-title">About</h2>
+      <p class="section-lead">
+        I am a junior game developer working with Unity and Unreal Engine. My projects include game jam entries, gameplay prototypes, AI systems, tools, and engine-based experiments. Recent work includes Unreal Engine C++, multiplayer learning, designer-facing gameplay systems, and production experience in larger team projects.
+      </p>
+    </section>
+
+    <section id="featured-projects" class="section-block">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="featured-grid">
+        <a class="project-card" href="project18-mellowdrunk.html">
+          <img class="project-card__image" src="images/be1.png" alt="Mellowdrunk gameplay screenshot from the 24-hour Unreal game jam build" loading="eager">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Mellowdrunk</h3>
+            <p class="project-card__description">A 24-hour HelloGameJam 2025 entry built in Unreal Engine. I worked as the main gameplay programmer on a 3D platformer where power-ups modify the character's movement, animation state, and available actions.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>Blueprints</li><li>3D Platformer</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project1.html">
+          <img class="project-card__image" src="images/project1.png" alt="Glass Thoughts visual novel scene with dialogue interface" loading="eager">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Finished</span></p>
+            <h3 class="project-card__title">Glass Thoughts</h3>
+            <p class="project-card__description">A six-month Unity visual novel project driven by a custom command-based dialogue and narrative scripting system with minigame integration.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>Narrative Systems</li><li>Tooling</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project19-galdrakona.html">
+          <img class="project-card__image" src="images/gk1.png" alt="Galdrakona gameplay screenshot from the Unreal Engine game jam project" loading="eager">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Galdrakona</h3>
+            <p class="project-card__description">A month-long Unreal Engine game jam project. I focused on AI systems, anchor-based enemy navigation, and designer-facing placement tools using C++ and Unreal AI systems.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>C++</li><li>AI</li><li>Perforce</li></ul>
+          </div>
+        </a>
+      </div>
+    </section>
+
+            <section id="unreal-engine" class="section-block">
+      <h2 class="section-title">Unreal Engine</h2>
+      <div class="project-grid">
+        <a class="project-card" href="project18-mellowdrunk.html">
+          <img class="project-card__image" src="images/be2.png" alt="Mellowdrunk screenshot with stylized character and platforming level" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Mellowdrunk</h3>
+            <p class="project-card__description">A 24-hour HelloGameJam 2025 entry built in Unreal Engine. I worked as the main gameplay programmer on a 3D platformer where power-ups modify the character's movement, animation state, and available actions.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>Blueprints</li><li>3D Platformer</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project19-galdrakona.html">
+          <img class="project-card__image" src="images/gk2.png" alt="Galdrakona screenshot showing environment and enemy setup" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Galdrakona</h3>
+            <p class="project-card__description">A month-long Unreal Engine game jam project. I focused on AI systems, anchor-based enemy navigation, and designer-facing placement tools using C++ and Unreal AI systems.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>C++</li><li>AI</li><li>Perforce</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project2.html">
+          <img class="project-card__image" src="images/sh1.png" alt="Unreal Engine multiplayer shooter prototype screenshot" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">In Development</span><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Unreal Multiplayer Shooter AI Prototype</h3>
+            <p class="project-card__description">An in-development C++ prototype used to study multiplayer shooter architecture and test AI systems in a networked gameplay environment.</p>
+            <ul class="tag-list"><li>In Development</li><li>Prototype</li><li>Unreal Engine</li><li>C++</li><li>Multiplayer</li><li>AI</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project4.html">
+          <img class="project-card__image" src="images/UT1.png" alt="Unreal AI prototype showing utility-based and behavior-tree-driven NPC logic." loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">AI-driven Project with Utility AI and Behavior Trees</h3>
+            <p class="project-card__description">An Unreal Engine AI prototype combining Utility AI and Behavior Trees to test different decision-making models for NPC behavior.</p>
+            <ul class="tag-list"><li>Unreal Engine</li><li>Utility AI</li><li>Behavior Trees</li><li>Blueprints</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project3.html">
+          <img class="project-card__image" src="images/sekiro2.png" alt="Combat prototype inspired by Sekiro showing melee clash" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Sekiro-inspired Combat System</h3>
+            <p class="project-card__description">A gameplay prototype focused on parry timing, stance interactions, and animation-driven combat responsiveness.</p>
+            <ul class="tag-list"><li>Unreal Engine</li><li>C#</li><li>Combat Systems</li><li>Animation Logic</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project12.html">
+          <img class="project-card__image" src="images/tanks1.png" alt="Tank gameplay scene with AI turret behavior in Unreal Engine" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Tank with AI and Turret in Unreal Engine</h3>
+            <p class="project-card__description">C++ tank controls and autonomous turret logic with behavior tree-based enemy routines.</p>
+            <ul class="tag-list"><li>Unreal Engine</li><li>C++</li><li>Behavior Trees</li><li>Gameplay AI</li></ul>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="unity" class="section-block">
+      <h2 class="section-title">Unity</h2>
+      <div class="project-grid">
+        <a class="project-card" href="project1.html">
+          <img class="project-card__image" src="images/project1.png" alt="Glass Thoughts dialogue and UI scene" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Finished</span></p>
+            <h3 class="project-card__title">Glass Thoughts</h3>
+            <p class="project-card__description">A custom command-based visual novel production with branching story flow, scene control, and integrated minigames.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>Narrative Engine</li><li>Tooling</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project16.html">
+          <img class="project-card__image" src="images/VNE.png" alt="Live2D visual novel prototype interface in Unity" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">In Development</span></p>
+            <h3 class="project-card__title">Live2D Visual Novel with Cooking Minigame</h3>
+            <p class="project-card__description">An expanded version of my Unity narrative stack with Live2D character integration and gameplay side systems.</p>
+            <ul class="tag-list"><li>Unity</li><li>Live2D</li><li>C#</li><li>Event-driven Systems</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project5.html">
+          <img class="project-card__image" src="images/project5.png" alt="Bird flock simulation behavior in Unity scene" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Bird Flock Simulation</h3>
+            <p class="project-card__description">Swarm intelligence implementation for emergent flock motion and group behavior.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>Simulation</li><li>AI</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project7.html">
+          <img class="project-card__image" src="images/archer4.png" alt="Third-person archer prototype with AI enemy in Unity" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Finite State Machine AI Archer Prototype</h3>
+            <p class="project-card__description">A Unity combat prototype with FSM-controlled enemy states and NavMesh-based movement.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>FSM</li><li>NavMesh</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project11.html">
+          <img class="project-card__image" src="images/navigation1.png" alt="Procedural terrain map with navigation setup in Unity" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Perlin Noise-based World Generator</h3>
+            <p class="project-card__description">Procedural island generation with LOD and dynamic chunk-aware navigation mesh updates.</p>
+            <ul class="tag-list"><li>Unity</li><li>Perlin Noise</li><li>Procedural Generation</li><li>NavMesh</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project8.html">
+          <img class="project-card__image" src="images/arkanoid2.png" alt="Arkanoid style level with paddle, ball, and blocks" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Finished</span></p>
+            <h3 class="project-card__title">Arkanoid-Style Game</h3>
+            <p class="project-card__description">A complete arcade implementation with level progression, score tracking, and core gameplay polish.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>UI</li><li>Gameplay Programming</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project14.html">
+          <img class="project-card__image" src="images/ptoki1.png" alt="Top-down puzzle level with moving platform systems" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Finished</span></p>
+            <h3 class="project-card__title">Top-Down 2D Puzzle Game with Simple Story</h3>
+            <p class="project-card__description">An early academic project combining puzzle logic, movement patterns, and simple narrative presentation.</p>
+            <ul class="tag-list"><li>Unity</li><li>Puzzle Systems</li><li>Academic</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project9.html">
+          <img class="project-card__image" src="images/dragon2.png" alt="Vertical platformer scene with dragon character and hazards" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Game for Bit Jam Wroclaw</h3>
+            <p class="project-card__description">A 24-hour vertical platformer prototype with precision movement and chase-pressure pacing.</p>
+            <ul class="tag-list"><li>Unity</li><li>Platforming</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project10.html">
+          <img class="project-card__image" src="images/melon2.png" alt="Top-down puzzle room with environmental mechanics" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Top Down 2D Logic Game</h3>
+            <p class="project-card__description">A 48-hour puzzle game where environmental state changes reshape traversal and solution paths.</p>
+            <ul class="tag-list"><li>Unity</li><li>Puzzle Design</li><li>FMOD</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project13.html">
+          <img class="project-card__image" src="images/TD1.png" alt="Tower defense map with enemies and defensive towers" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Endless Wave Tower Defense</h3>
+            <p class="project-card__description">A jam prototype with scaling wave difficulty and varied tower behavior for strategic defense loops.</p>
+            <ul class="tag-list"><li>Unity</li><li>Tower Defense</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project6.html">
+          <img class="project-card__image" src="images/rose1.png" alt="2D arena combat scene with rose weapon mechanic" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">2D Arena Fighter</h3>
+            <p class="project-card__description">A jam game with combo scoring and a risk-reward health mechanic tied to aggressive attacks.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>Combat</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="game-jams" class="section-block">
+      <h2 class="section-title">Game Jams</h2>
+      <div class="project-grid">
+        <a class="project-card" href="project18-mellowdrunk.html">
+          <img class="project-card__image" src="images/be2.png" alt="Mellowdrunk screenshot with stylized character and platforming level" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Mellowdrunk</h3>
+            <p class="project-card__description">A 24-hour HelloGameJam 2025 entry built in Unreal Engine. I worked as the main gameplay programmer on a 3D platformer where power-ups modify the character's movement, animation state, and available actions.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>Blueprints</li><li>3D Platformer</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project19-galdrakona.html">
+          <img class="project-card__image" src="images/gk2.png" alt="Galdrakona screenshot showing environment and enemy setup" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Galdrakona</h3>
+            <p class="project-card__description">A month-long Unreal Engine game jam project. I focused on AI systems, anchor-based enemy navigation, and designer-facing placement tools using C++ and Unreal AI systems.</p>
+            <ul class="tag-list"><li>Game Jam</li><li>Unreal Engine</li><li>C++</li><li>AI</li><li>Perforce</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project9.html">
+          <img class="project-card__image" src="images/dragon2.png" alt="Vertical platformer scene with dragon character and hazards" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Game for Bit Jam Wroclaw</h3>
+            <p class="project-card__description">A 24-hour vertical platformer prototype with precision movement and chase-pressure pacing.</p>
+            <ul class="tag-list"><li>Unity</li><li>Platforming</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project10.html">
+          <img class="project-card__image" src="images/melon2.png" alt="Top-down puzzle room with environmental mechanics" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Top Down 2D Logic Game</h3>
+            <p class="project-card__description">A 48-hour puzzle game where environmental state changes reshape traversal and solution paths.</p>
+            <ul class="tag-list"><li>Unity</li><li>Puzzle Design</li><li>FMOD</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project13.html">
+          <img class="project-card__image" src="images/TD1.png" alt="Tower defense map with enemies and defensive towers" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">Endless Wave Tower Defense</h3>
+            <p class="project-card__description">A jam prototype with scaling wave difficulty and varied tower behavior for strategic defense loops.</p>
+            <ul class="tag-list"><li>Unity</li><li>Tower Defense</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project6.html">
+          <img class="project-card__image" src="images/rose1.png" alt="2D arena combat scene with rose weapon mechanic" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Game Jam</span></p>
+            <h3 class="project-card__title">2D Arena Fighter</h3>
+            <p class="project-card__description">A jam game with combo scoring and a risk-reward health mechanic tied to aggressive attacks.</p>
+            <ul class="tag-list"><li>Unity</li><li>C#</li><li>Combat</li><li>Game Jam</li></ul>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="other" class="section-block">
+      <h2 class="section-title">Other</h2>
+      <div class="project-grid">
+        <a class="project-card" href="Pong.html">
+          <img class="project-card__image" src="images/Pong1.png" alt="Classic Pong gameplay screenshot" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Prototype</span></p>
+            <h3 class="project-card__title">Pong / Pong Hazard</h3>
+            <p class="project-card__description">Two browser Pong variants: a classic mode and a hazard-themed betting mode with the same core canvas gameplay.</p>
+            <ul class="tag-list"><li>JavaScript</li><li>Canvas</li><li>Gameplay Prototype</li></ul>
+          </div>
+        </a>
+
+        <a class="project-card" href="project17-engineering-thesis.html">
+          <img class="project-card__image" src="images/VNE1.png" alt="Engineering thesis related to Unity visual novel interpreter" loading="lazy" decoding="async">
+          <div class="project-card__body">
+            <p class="project-card__meta"><span class="status-badge">Thesis</span></p>
+            <h3 class="project-card__title">Engineering Thesis, Unity Visual Novel Interpreter</h3>
+            <p class="project-card__description">A thesis describing the production process and scripting workflow behind a custom Unity visual novel interpreter.</p>
+            <ul class="tag-list"><li>Unity</li><li>Narrative Tooling</li><li>Research</li></ul>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="section-block">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <p class="section-lead">
+          I am open to junior gameplay, AI, and technical game programming opportunities. The best way to reach me is by email:
+          <a href="mailto:maligrandatomasz@gmail.com">maligrandatomasz@gmail.com</a>
+        </p>
+      </div>
     </section>
   </main>
-  
-  <footer>
-    <p>© 2025 Tomasz Maligranda</p>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Tomasz Maligranda</p>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

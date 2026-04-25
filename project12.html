@@ -3,87 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tank with AI and Turret in Unreal Engine - Tomasz Maligranda Portfolio</title>
+  <title>Tank with AI and Turret in Unreal Engine - Tomasz Maligranda</title>
+  <meta name="description" content="Unreal coursework prototype featuring C++ tank controls, turret logic, and behavior tree driven enemy behavior.">
+  <meta property="og:title" content="Tank with AI and Turret in Unreal Engine - Tomasz Maligranda">
+  <meta property="og:description" content="Tank gameplay prototype with autonomous turret targeting and behavior tree enemy action flow in Unreal Engine.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://krak24.github.io/PortfolioSite/project12.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-    }
-    main {
-      flex: 1;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #333;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>Tank with AI and Turret in Unreal Engine</h1>
-    <nav>
-      <a href="index.html">Back to Portfolio</a>
-    </nav>
-  </header>
-  
-  <main>
-    <!-- Project Description -->
-    <section id="description">
-      <h2>Project Description</h2>
-      <p>This project was developed as part of a university assignment and focuses on tank control, AI behavior, and turret mechanics in Unreal Engine. The tank is fully controlled via C++ scripts, handling movement and interactions. Additionally, the turret system was also implemented in C++, allowing it to autonomously detect and shoot at enemies, specifically targeting the player’s tank. The simple enemy AI was designed using Behavior Trees (BT). In this implementation, the enemy approaches the player, deploys a turret, and then moves away to restock turrets before returning to engage again.</p>
+  <main class="project-page">
+    <a class="project-back" href="index.html">&larr; Back to portfolio</a>
+
+    <header class="project-header">
+      <h1 class="project-title">Tank with AI and Turret in Unreal Engine</h1>
+      <p class="project-subtitle">A C++ gameplay and AI prototype developed as part of university coursework.</p>
+      <div class="project-meta">
+        <span class="status-badge status-badge--prototype">Prototype</span>
+      </div>
+      <ul class="tag-list">
+        <li>Unreal Engine</li>
+        <li>C++</li>
+        <li>Behavior Trees</li>
+        <li>Gameplay AI</li>
+      </ul>
+    </header>
+
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>
+        This project focuses on combining player vehicle controls with enemy AI behavior and autonomous turret combat logic.
+      </p>
     </section>
-    
-    <!-- Gallery -->
-    <section id="gallery">
+
+    <section class="project-section">
+      <h2>My Role</h2>
+      <p>
+        I implemented player tank controls in C++, programmed turret targeting and firing behavior, and set up enemy behavior patterns using behavior trees.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>C++ vehicle movement and interaction logic for the player tank.</li>
+        <li>Autonomous turret detection and attack behavior.</li>
+        <li>Behavior Tree enemy loop with approach, deploy, retreat, and resupply flow.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Technologies Used</h2>
+      <ul class="tag-list">
+        <li>Unreal Engine</li>
+        <li>C++</li>
+        <li>Behavior Trees</li>
+        <li>Gameplay Programming</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="images/tanks1.png" alt="Tank with AI and Turret - Tanks 1" class="zoomable">
-        <img src="images/tanks2.png" alt="Tank with AI and Turret - Tanks 2" class="zoomable">
-        <img src="images/tanks3.png" alt="Tank with AI and Turret - Tanks 3" class="zoomable">
-        <img src="images/tanks4.png" alt="Tank with AI and Turret - Tanks 4" class="zoomable">
+      <div class="gallery-grid">
+        <a href="images/tanks1.png" data-lightbox><img src="images/tanks1.png" alt="Tank prototype gameplay scene with active enemy engagement" loading="lazy" decoding="async"></a>
+        <a href="images/tanks2.png" data-lightbox><img src="images/tanks2.png" alt="Enemy turret deployment and combat behavior in Unreal test map" loading="lazy" decoding="async"></a>
+        <a href="images/tanks3.png" data-lightbox><img src="images/tanks3.png" alt="Player tank navigation and targeting sequence in C++ prototype" loading="lazy" decoding="async"></a>
+        <a href="images/tanks4.png" data-lightbox><img src="images/tanks4.png" alt="Behavior tree state execution during enemy approach and retreat cycle" loading="lazy" decoding="async"></a>
       </div>
     </section>
   </main>
-  
-  <footer>
-    <p>© 2025 Tomasz Maligranda</p>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Tomasz Maligranda</p>
+    </div>
   </footer>
-  
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-  
-  <script>
-    // Lightbox functionality for gallery images
-    document.addEventListener('DOMContentLoaded', function () {
-      var modal = document.getElementById('image-modal');
-      var modalImg = document.getElementById('modal-img');
-      var closeBtn = document.querySelector('#image-modal .close');
-      
-      document.querySelectorAll('.zoomable').forEach(function(img) {
-        img.addEventListener('click', function() {
-          modal.style.display = 'block';
-          modalImg.src = this.src;
-        });
-      });
-      
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-      
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>

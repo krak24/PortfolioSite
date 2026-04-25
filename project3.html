@@ -3,73 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sekiro-inspired Combat System - Tomasz Maligranda Portfolio</title>
+  <title>Sekiro-inspired Combat System - Tomasz Maligranda</title>
+  <meta name="description" content="Unreal Engine combat prototype inspired by Sekiro with parry timing, stance mechanics, and animation-driven state transitions.">
+  <meta property="og:title" content="Sekiro-inspired Combat System - Tomasz Maligranda">
+  <meta property="og:description" content="Combat-focused Unreal Engine prototype featuring parry windows, posture interactions, and responsive movement state logic.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://krak24.github.io/PortfolioSite/project3.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Sekiro-inspired Combat System</h1>
-    <nav>
-      <a href="index.html">Back to Portfolio</a>
-    </nav>
-  </header>
-  
-  <main>
-    <section id="description">
-      <h2>Project Description</h2>
-      <p>In this project, I recreated the core combat mechanics from Sekiro: Shadows Die Twice, including precise parrying and stance mechanics. I focused on replicating FromSoftware’s design principles, such as hyper armor (stance increase) at specific animation frames and movement queueing for responsive combat interactions. Additionally, I implemented animations and developed the system based on a diagram I created. The diagram, visible in the first image, consists of two parts: the left side illustrates the character’s animations and states (jumping, sprinting, walking, etc.) and their transitions; the right side presents a simplified behavior tree, which I am implementing in this project.</p>
+  <main class="project-page">
+    <a class="project-back" href="index.html">&larr; Back to portfolio</a>
+
+    <header class="project-header">
+      <h1 class="project-title">Sekiro-inspired Combat System</h1>
+      <p class="project-subtitle">A prototype recreating timing-heavy melee systems and state-driven combat behavior.</p>
+      <div class="project-meta">
+        <span class="status-badge status-badge--prototype">Prototype</span>
+      </div>
+      <ul class="tag-list">
+        <li>Unreal Engine</li>
+        <li>C#</li>
+        <li>Combat Systems</li>
+        <li>Animation State Logic</li>
+      </ul>
+    </header>
+
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>
+        This project explores core action-combat mechanics inspired by Sekiro, with emphasis on precision, readability,
+        and player feedback consistency.
+      </p>
     </section>
-    
-    <section id="gallery">
+
+    <section class="project-section">
+      <h2>My Role</h2>
+      <p>
+        I implemented combat timing, parry handling, stance interactions, and animation transition logic. I also designed
+        a reference diagram to map character states and behavior transitions before implementation.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Parry windows and posture-style pressure interactions.</li>
+        <li>Animation frame-aware behavior logic for combat response timing.</li>
+        <li>Movement queueing to keep controls responsive during chained actions.</li>
+        <li>Diagram-driven architecture to validate state-transition design before coding.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Technologies Used</h2>
+      <ul class="tag-list">
+        <li>Unreal Engine</li>
+        <li>C#</li>
+        <li>Animation System</li>
+        <li>State Logic</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="images/sekiro1.png" alt="Sekiro Combat - sekiro1" class="zoomable">
-        <img src="images/sekiro2.png" alt="Sekiro Combat - sekiro2" class="zoomable">
-        <img src="images/sekiro3.png" alt="Sekiro Combat - sekiro3" class="zoomable">
+      <div class="gallery-grid">
+        <a href="images/sekiro1.png" data-lightbox><img src="images/sekiro1.png" alt="Combat state diagram used to design transitions for the Sekiro-inspired prototype" loading="lazy" decoding="async"></a>
+        <a href="images/sekiro2.png" data-lightbox><img src="images/sekiro2.png" alt="Gameplay combat sequence with timed defensive interaction" loading="lazy" decoding="async"></a>
+        <a href="images/sekiro3.png" data-lightbox><img src="images/sekiro3.png" alt="Close combat moment demonstrating posture and parry interaction timing" loading="lazy" decoding="async"></a>
       </div>
     </section>
-    
-    <section id="videos">
-      <h2>Videos</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/MmZpP6bgdN4" frameborder="0" allowfullscreen></iframe>
+
+    <section class="project-section">
+      <h2>Video</h2>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/MmZpP6bgdN4" title="Sekiro-inspired combat prototype gameplay" allowfullscreen></iframe>
       </div>
     </section>
   </main>
-  
-  <footer>
-    <p>© 2025 Tomasz Maligranda</p>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Tomasz Maligranda</p>
+    </div>
   </footer>
-  
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var modal = document.getElementById('image-modal');
-      var modalImg = document.getElementById('modal-img');
-      var closeBtn = document.querySelector('#image-modal .close');
-      
-      document.querySelectorAll('.zoomable').forEach(function(img) {
-        img.addEventListener('click', function() {
-          modal.style.display = 'block';
-          modalImg.src = this.src;
-        });
-      });
-      
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-      
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
