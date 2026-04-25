@@ -10,11 +10,21 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://krak24.github.io/PortfolioSite/project16.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+    <script>
+    (function () {
+      var savedTheme = localStorage.getItem('portfolio-theme');
+      document.documentElement.dataset.theme =
+        savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark';
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="project-page">
-    <a class="project-back" href="index.html">&larr; Back to portfolio</a>
+    <div class="project-toolbar">
+      <a class="project-back" href="index.html">&larr; Back to portfolio</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>Light Mode</button>
+    </div>
 
     <header class="project-header">
       <h1 class="project-title">Live2D Visual Novel with Cooking Minigame</h1>

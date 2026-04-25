@@ -87,3 +87,80 @@
 
   document.addEventListener("DOMContentLoaded", initLightbox);
 })();
+
+(function () {
+  "use strict";
+
+  var THEME_KEY = "portfolio-theme";
+  var VALID_THEMES = { dark: true, light: true };
+
+  function normalizeTheme(theme) {
+    return VALID_THEMES[theme] ? theme : "dark";
+  }
+
+  function readStoredTheme() {
+    try {
+      return normalizeTheme(localStorage.getItem(THEME_KEY));
+    } catch (error) {
+      return "dark";
+    }
+  }
+
+  function writeStoredTheme(theme) {
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (error) {
+      return;
+    }
+  }
+
+  function getCurrentTheme() {
+    return normalizeTheme(document.documentElement.dataset.theme);
+  }
+
+  function updateToggleText(theme) {
+    var nextLabel = theme === "light" ? "Dark Mode" : "Light Mode";
+    var toggles = document.querySelectorAll("[data-theme-toggle]");
+
+    toggles.forEach(function (toggle) {
+      toggle.textContent = nextLabel;
+      toggle.setAttribute("aria-label", nextLabel);
+    });
+  }
+
+  function applyTheme(theme) {
+    var resolvedTheme = normalizeTheme(theme);
+    document.documentElement.dataset.theme = resolvedTheme;
+    writeStoredTheme(resolvedTheme);
+    updateToggleText(resolvedTheme);
+    return resolvedTheme;
+  }
+
+  function initThemeToggle() {
+    var initialTheme = readStoredTheme();
+    applyTheme(initialTheme);
+
+    var toggles = document.querySelectorAll("[data-theme-toggle]");
+    if (toggles.length === 0) {
+      return;
+    }
+
+    toggles.forEach(function (toggle) {
+      if (toggle.dataset.themeToggleBound === "true") {
+        return;
+      }
+
+      toggle.dataset.themeToggleBound = "true";
+      toggle.addEventListener("click", function () {
+        var currentTheme = getCurrentTheme();
+        applyTheme(currentTheme === "light" ? "dark" : "light");
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+})();
