@@ -3,85 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkanoid-Style Game - Tomasz Maligranda Portfolio</title>
+  <title>Arkanoid-Style Game - Tomasz Maligranda</title>
+  <meta name="description" content="Unity Arkanoid-style game with multiple levels, scoring, and UI built as one of my earliest complete game projects.">
+  <meta property="og:title" content="Arkanoid-Style Game - Tomasz Maligranda">
+  <meta property="og:description" content="Complete Unity arcade project with level progression, brick durability logic, and score tracking UI.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://krak24.github.io/PortfolioSite/project8.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Arkanoid-Style Game</h1>
-    <nav>
-      <a href="index.html">Back to Portfolio</a>
-    </nav>
-  </header>
-  
-  <main>
-    <!-- Project Description -->
-    <section id="description">
-      <h2>Project Description</h2>
-      <p>This project is an Arkanoid‑style game developed in Unity as part of a university assignment. It is one of the first complete games I have created, aside from an earlier project made during a practices at Ten Square Games back in 2016. The gameplay follows the classic Arkanoid mechanics, where the player controls a paddle to bounce a ball and break bricks.</p>
-      <p>The game includes multiple levels with blocks of varying durability and point values. A simple user interface is implemented, providing essential elements such as a score counter and basic menus. The project serves as an introduction to game development, focusing on core gameplay mechanics, level progression, and UI integration within Unity.</p>
-    </section>
-    
-    <!-- Gallery -->
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="images/arkanoid1.png" alt="Arkanoid‑Style Game – Arkanoid 1" class="zoomable">
-        <img src="images/arkanoid2.png" alt="Arkanoid‑Style Game – Arkanoid 2" class="zoomable">
+  <main class="project-page">
+    <a class="project-back" href="index.html">&larr; Back to portfolio</a>
+
+    <header class="project-header">
+      <h1 class="project-title">Arkanoid-Style Game</h1>
+      <p class="project-subtitle">An early complete Unity game project built around classic arcade mechanics.</p>
+      <div class="project-meta">
+        <span class="status-badge status-badge--finished">Finished</span>
       </div>
-    </section>
-    
-    <!-- Video -->
-    <section id="video">
-      <h2>Video</h2>
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/y9aKwVRISPo" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </section>
-    
-    <!-- Links -->
-    <section id="links">
-      <h2>Links</h2>
+      <ul class="tag-list">
+        <li>Unity</li>
+        <li>C#</li>
+        <li>Arcade Gameplay</li>
+        <li>UI</li>
+      </ul>
+    </header>
+
+    <section class="project-section">
+      <h2>Overview</h2>
       <p>
-        <a href="https://youtu.be/y9aKwVRISPo" target="_blank">Watch on YouTube</a>
+        This project recreates classic Arkanoid gameplay where the player controls a paddle and clears level layouts by
+        bouncing a ball into destructible blocks.
       </p>
     </section>
+
+    <section class="project-section">
+      <h2>My Role</h2>
+      <p>
+        I implemented gameplay flow, level structure, score progression, and the core user interface needed for complete play loops.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Multi-level progression with varying block durability and point values.</li>
+        <li>Paddle-and-ball gameplay system with arcade pacing.</li>
+        <li>Score display and core menu/UI elements for a complete game loop.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Technologies Used</h2>
+      <ul class="tag-list">
+        <li>Unity</li>
+        <li>C#</li>
+        <li>Gameplay Programming</li>
+        <li>UI</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <a href="images/arkanoid1.png" data-lightbox><img src="images/arkanoid1.png" alt="Arkanoid game level with paddle and destructible brick layout" loading="lazy" decoding="async"></a>
+        <a href="images/arkanoid2.png" data-lightbox><img src="images/arkanoid2.png" alt="Arcade gameplay moment showing score and active block interactions" loading="lazy" decoding="async"></a>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Video</h2>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/y9aKwVRISPo" title="Arkanoid-style game gameplay video" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Links</h2>
+      <ul class="project-links">
+        <li><strong>YouTube:</strong> <a href="https://youtu.be/y9aKwVRISPo" target="_blank" rel="noopener noreferrer">Watch gameplay</a></li>
+      </ul>
+    </section>
   </main>
-  
-  <footer>
-    <p>© 2025 Tomasz Maligranda</p>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Tomasz Maligranda</p>
+    </div>
   </footer>
-  
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-  
-  <script>
-    // Lightbox functionality for gallery images
-    document.addEventListener('DOMContentLoaded', function () {
-      var modal = document.getElementById('image-modal');
-      var modalImg = document.getElementById('modal-img');
-      var closeBtn = document.querySelector('#image-modal .close');
-      
-      document.querySelectorAll('.zoomable').forEach(function(img) {
-        img.addEventListener('click', function() {
-          modal.style.display = 'block';
-          modalImg.src = this.src;
-        });
-      });
-      
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-      
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
