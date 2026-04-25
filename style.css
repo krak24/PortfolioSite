@@ -431,6 +431,10 @@ select:focus-visible {
   border: 0;
 }
 
+.pdf-embed {
+  aspect-ratio: 16 / 10;
+}
+
 .lightbox {
   position: fixed;
   inset: 0;

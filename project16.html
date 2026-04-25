@@ -3,85 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live2D Visual Novel with Cooking Minigame - Tomasz Maligranda Portfolio</title>
+  <title>Live2D Visual Novel with Cooking Minigame - Tomasz Maligranda</title>
+  <meta name="description" content="In-development Unity visual novel extending a custom command-based dialogue engine with Live2D and gameplay systems.">
+  <meta property="og:title" content="Live2D Visual Novel with Cooking Minigame - Tomasz Maligranda">
+  <meta property="og:description" content="Unity visual novel project with command-based narrative scripting, Live2D integration, and event-driven story flow.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://krak24.github.io/PortfolioSite/project16.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Live2D Visual Novel with Cooking Minigame</h1>
-    <nav>
-      <a href="index.html">Back to Portfolio</a>
-    </nav>
-  </header>
+  <main class="project-page">
+    <a class="project-back" href="index.html">&larr; Back to portfolio</a>
 
-  <main>
-    <!-- Project Description -->
-    <section id="description">
-      <h2>Project Description</h2>
-      <p>This visual novel is being developed during a Game Jam and is currently in progress. The project is powered by my custom command-based dialogue engine built in Unity, originally developed for the Glass Thoughts project. For this new title, the engine was significantly expanded to support additional features such as voice acting playback and full Live2D character support via Cubism SDK integration.</p>
-      <p>In addition to the story-driven narrative, the game features a cooking minigame that complements the overall plot and pacing. Once development is complete and the game is uploaded, I will include the relevant download links below.</p>
+    <header class="project-header">
+      <h1 class="project-title">Live2D Visual Novel with Cooking Minigame</h1>
+      <p class="project-subtitle">An in-development visual novel that extends my custom Unity narrative tooling.</p>
+      <div class="project-meta">
+        <span class="status-badge status-badge--in-development">In Development</span>
+      </div>
+      <ul class="tag-list">
+        <li>Unity</li>
+        <li>C#</li>
+        <li>Live2D</li>
+        <li>Narrative Systems</li>
+        <li>Event-driven Progression</li>
+      </ul>
+    </header>
+
+    <section class="project-section">
+      <h2>Overview</h2>
+      <p>
+        This project builds on the narrative interpreter architecture from Glass Thoughts and expands it for a new production with richer presentation features.
+      </p>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery">
+    <section class="project-section">
+      <h2>My Role</h2>
+      <p>
+        I am extending the custom command-based dialogue and narrative scripting system, integrating Live2D support, and implementing scene control and progression workflows in Unity.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Custom command-based narrative scripting stack with branching story flow and player choices.</li>
+        <li>Live2D Cubism integration for animated character presentation.</li>
+        <li>Scene control and event-driven progression connected to narrative state.</li>
+        <li>Cooking minigame module tied to story pacing.</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
+      <h2>Technologies Used</h2>
+      <ul class="tag-list">
+        <li>Unity</li>
+        <li>C#</li>
+        <li>Live2D Cubism SDK</li>
+        <li>Narrative Tooling</li>
+      </ul>
+    </section>
+
+    <section class="project-section">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="images/VNE1.png" alt="Live2D Visual Novel - Screenshot" class="zoomable">
+      <div class="gallery-grid">
+        <a href="images/VNE1.png" data-lightbox><img src="images/VNE1.png" alt="In-development visual novel scene featuring Live2D character animation" loading="lazy" decoding="async"></a>
       </div>
     </section>
 
-    <!-- Links -->
-    <section id="links">
+    <section class="project-section">
       <h2>Links</h2>
-      <p><strong>Itch.io game page:</strong> <span>Coming soon</span></p>
-      <p><strong>GitHub (featured code):</strong> <span>Coming soon</span></p>
+      <ul class="project-links">
+        <li><strong>Itch.io:</strong> Coming soon after public release.</li>
+        <li><strong>Featured code:</strong> Coming soon.</li>
+      </ul>
     </section>
 
-    <!-- Optional Video (can be added later) -->
-    <!--
-    <section id="video">
-      <h2>Video</h2>
-      <div class="video-container">
-        <iframe src="YOUR_VIDEO_LINK_HERE" frameborder="0" allowfullscreen></iframe>
-      </div>
+    <section class="project-section">
+      <h2>Notes</h2>
+      <p>
+        The production is still active. Public links will be added when the jam build is finalized and published.
+      </p>
     </section>
-    -->
   </main>
 
-  <footer>
-    <p>© 2025 Tomasz Maligranda</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Tomasz Maligranda</p>
+    </div>
   </footer>
 
-  <!-- Lightbox Modal -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-  </div>
-
-  <script>
-    // Lightbox functionality for gallery images
-    document.addEventListener('DOMContentLoaded', function () {
-      var modal = document.getElementById('image-modal');
-      var modalImg = document.getElementById('modal-img');
-      var closeBtn = document.querySelector('#image-modal .close');
-
-      document.querySelectorAll('.zoomable').forEach(function(img) {
-        img.addEventListener('click', function() {
-          modal.style.display = 'block';
-          modalImg.src = this.src;
-        });
-      });
-
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
