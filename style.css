@@ -200,6 +200,35 @@ button:focus-visible {
   color: var(--bg);
 }
 
+html[data-theme="light"] .theme-toggle {
+  background: #0d0d0d;
+  color: #f5f5f0;
+  border-color: #0d0d0d;
+}
+
+html[data-theme="dark"] .theme-toggle,
+html:not([data-theme]) .theme-toggle {
+  background: #f5f5f0;
+  color: #0d0d0d;
+  border-color: #f5f5f0;
+}
+
+html[data-theme="light"] .theme-toggle:hover,
+html[data-theme="light"] .theme-toggle:focus-visible {
+  background: #1a1a1a;
+  color: #f5f5f0;
+  border-color: #1a1a1a;
+}
+
+html[data-theme="dark"] .theme-toggle:hover,
+html[data-theme="dark"] .theme-toggle:focus-visible,
+html:not([data-theme]) .theme-toggle:hover,
+html:not([data-theme]) .theme-toggle:focus-visible {
+  background: #ffffff;
+  color: #0d0d0d;
+  border-color: #ffffff;
+}
+
 .project-grid,
 .featured-grid,
 .gallery-grid {
