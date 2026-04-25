@@ -1,28 +1,89 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("Portfolio page loaded.");
+(function () {
+  "use strict";
 
-  // Pobieramy elementy modalu
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
-  const closeBtn = document.querySelector('.modal .close');
+  function createLightbox() {
+    var lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.setAttribute("data-lightbox-modal", "true");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.innerHTML =
+      '<div class="lightbox__inner" role="dialog" aria-modal="true" aria-label="Image preview">' +
+      '<button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image preview">&times;</button>' +
+      '<img class="lightbox__image" data-lightbox-image alt="Expanded project image">' +
+      "</div>";
+    document.body.appendChild(lightbox);
+    return lightbox;
+  }
 
-  // Dodajemy obsługę kliknięcia na obrazki z klasą zoomable
-  document.querySelectorAll('.zoomable').forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = 'block';
-      modalImg.src = img.src;
-    });
-  });
+  function initLightbox() {
+    var triggerLinks = Array.prototype.slice.call(
+      document.querySelectorAll("a[data-lightbox]")
+    );
 
-  // Zamknięcie modalu przy kliknięciu na przycisk "X"
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Zamknięcie modalu przy kliknięciu na ciemny obszar poza obrazkiem
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+    if (triggerLinks.length === 0) {
+      return;
     }
-  });
-});
+
+    var lightbox = document.querySelector("[data-lightbox-modal]");
+    if (!lightbox) {
+      lightbox = createLightbox();
+    }
+
+    var lightboxImage = lightbox.querySelector("[data-lightbox-image]");
+    var closeButton = lightbox.querySelector("[data-lightbox-close]");
+
+    if (!lightboxImage || !closeButton) {
+      return;
+    }
+
+    function openLightbox(imageUrl, altText) {
+      lightboxImage.src = imageUrl;
+      lightboxImage.alt = altText || "Expanded project image";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeButton.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightbox.classList.contains("is-open")) {
+        return;
+      }
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.removeAttribute("src");
+      document.body.style.overflow = "";
+    }
+
+    triggerLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        var imageUrl = link.getAttribute("href");
+        var previewImage = link.querySelector("img");
+        var altText = previewImage ? previewImage.getAttribute("alt") : "";
+
+        if (!imageUrl) {
+          return;
+        }
+
+        event.preventDefault();
+        openLightbox(imageUrl, altText);
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initLightbox);
+})();
